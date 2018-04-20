@@ -1,0 +1,109 @@
+/*verticalline*/
+.vl {
+	border-left: 2px #FF6347;
+	height: 400px;
+	position: absolute;
+	left: 79%;
+	margin: auto
+}
+
+.item_img {
+	height: 330px !important
+}
+
+.detail_img {
+	height: 500px !important;
+}
+
+body {
+	background-image: url("../images/clothesbackground.jpeg");
+	opacity: 0.90;
+	text-align: center;
+	margin: 50px;
+}
+
+/*Button Styling*/
+.btn {
+	background-color: #778899;
+	color: #F8F8FF;
+	font-size: 16px;
+	padding: 10px 24px;
+	border-radius: 8px;
+}
+
+.btn:hover {
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.btn:active {
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+/***Cart Page***/
+
+/*cart items*/
+.containerShell
+{
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.contentContainer {
+	margin: 0 auto;
+    text-align: left;
+    display: table-cell;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.contentItems {
+ 
+    color: #666;
+    border: 1px solid #f3f3f3;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+.bordered .content.message {
+    padding: 20px;
+}
+
+/*cart summary*/
+.summaryContent {
+	background: #191919;
+	letter-spacing: .025em;
+	font-size: 14px;
+	display: inline-block;
+}
+
+.summaryRowBegin
+{
+	border-bottom: #000 1px solid;
+    padding: 10px;
+    font-size: 20px;
+}
+.summaryRow {
+    padding: 14px 20px;
+    border-top: #666 1px solid;
+}
+
+.itemLabel
+{
+	max-width: 80%;
+    float: left;
+}
+
+.itemDetailLabel
+{
+	max-width: 80%;
+    float: left;
+}
+
+.detailRow {
+    padding: 10px 70px;
+    
+}

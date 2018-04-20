@@ -1,0 +1,47 @@
+   
+body{
+/*       background: linear-gradient(to bottom right, white, grey);
+ */      background-image: url("../images/clothesbackground.jpeg");
+		 opacity: 0.90;
+
+  }
+  
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+
+/*   centered
+  {
+margin: 0 auto;
+}
+ 
+ well
+ {
+ text-align: center;
+ }
+
+  div.col-sm-4 div {
+      height: 200px;
+      font-size: 28px;
+      
+  }
+  
+  div.col-sm-6 div img
+  {
+  	width:50px;
+  	height: 50px;
+  	
+  }
+  
+ div.col-sm-4 div img
+  {
+  	width:50px;
+  	height: 50px;
+  }
+ */
