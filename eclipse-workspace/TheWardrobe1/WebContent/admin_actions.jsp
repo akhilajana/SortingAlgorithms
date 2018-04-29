@@ -13,9 +13,10 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="js/listeners.js"></script>
 
 </head>
-<body data-spy="scroll" data-target="#myScrollspy" data-offset="15">
+<body>
 
 	<div class="container-fluid">
 		<jsp:include page="admin_header.jsp"></jsp:include>
@@ -33,13 +34,12 @@
 	<div class="row">
 		<div class="col-sm-3 col-xs-offset-1">
 
-			<div class="row" onclick="openTab('b1');" style="background: white;">Add
-				New Items</div>
-			<div class="row" onclick="openTab('b2');" style="background: white;">
-				Delete Existing Items</div>
+			<div class="row well" onclick="openTab('b1');">Add New Items</div>
+			<div class="row well" onclick="openTab('b2');">Delete Existing
+				Items</div>
 		</div>
 		<div class="col-sm-7 col-xs-offset-1">
-			<div id="b1" class="containerTab" style="display:none;">
+			<div id="b1" class="containerTab" style="display: none;">
 				<span onclick="this.parentElement.style.display='none'"
 					class="closebtn">&times;</span>
 
@@ -71,7 +71,7 @@
 								description:</label>
 							<div class="col-sm-5">
 								<textarea class="form-control" rows="2" id="prdDesc"
-									placeholder="Enter product description"></textarea>
+									name="prdDesc" placeholder="Enter product description"></textarea>
 							</div>
 						</div>
 
@@ -122,14 +122,17 @@
 
 						<div class="form-group">
 							<div class="col-sm-offset-1 col-sm-10">
-								<button type="submit" class="btn btn-success">Add Item</button>
+								<input type="submit" name="insert_item"
+									class="btn btn-success"
+									value="Add
+									Item">
 							</div>
 						</div>
 					</form>
 				</div>
 			</div>
 
-			<div id="b2" class="containerTab" style="display:none;">
+			<div id="b2" class="containerTab" style="display: none;">
 				<span onclick="this.parentElement.style.display='none'"
 					class="closebtn">&times;</span>
 				<div class="col-md-7 col-sm-offset-1 well">
@@ -140,18 +143,23 @@
 						method="post">
 
 						<div class="form-group">
-							<label class="control-label col-sm-4" for="prdId">Product Id:</label>
+							<label class="control-label col-sm-4" for="prdId">Product
+								Id:</label>
 							<div class="col-sm-5">
 								<input type="text" class="form-control" id="prdId"
 									placeholder="Enter product Id" name="prdId">
 							</div>
 						</div>
 						<br>
-						
+
 
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
-								<button type="submit" class="btn btn-danger">Delete Item</button>
+								<input type="submit" name="delete_item"
+									class="btn btn-danger"
+									value="Delete
+									Item">
+
 							</div>
 						</div>
 					</form>
@@ -160,16 +168,6 @@
 
 		</div>
 	</div>
-
-
-
-
-
-
-
-
-
-
 
 	<!-- Three rows -->
 	<div class="col-3"></div>

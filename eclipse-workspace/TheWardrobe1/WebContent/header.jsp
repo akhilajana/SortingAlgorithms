@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/index_style.css">
+  <link rel="stylesheet" href="css/products_style.css">
 	<script src="js/listeners.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -42,7 +42,7 @@
  -->      	</c:when>
       	<c:otherwise>
       	
-      	 <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> </a></li>
+      	 <li><a href="${pageContext.request.contextPath}/CartItemsServlet"><span class="glyphicon glyphicon-shopping-cart"></span> </a></li>
       	 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle ="dropdown"> My Profile <span class="glyphicon glyphicon-user"></span></a> 
       	 	<ul class="dropdown-menu">
 	      	 	<li><a href="#">Your Orders</a></li>

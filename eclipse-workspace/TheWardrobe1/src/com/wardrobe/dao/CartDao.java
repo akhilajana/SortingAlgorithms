@@ -22,13 +22,13 @@ public class CartDao {
 		        return con;
 	   }
 	   
-	   public int delete_cart(int cartID)
+	   public int delete_cart(int itemId)
 	   {
 		   int status=0;
 		   try{
 			   Connection con=getConnection();
-			   PreparedStatement statement=(PreparedStatement) con.prepareStatement("delete from cart where cartid=?");
-			   statement.setInt(1,cartID);
+			   PreparedStatement statement=(PreparedStatement) con.prepareStatement("delete from cart where item_id=?");
+			   statement.setInt(1,itemId);
 			   status=statement.executeUpdate();
 			   return status;
 		   }
@@ -43,7 +43,7 @@ public class CartDao {
 		   int status=0;
 		   try{
 			   Connection con=getConnection();
-			   PreparedStatement statement=(PreparedStatement) con.prepareStatement("insert into cart(itemid,item_name,quantity,user_id,item_price,imageUrl) values(?,?,?,?,?,?)");
+			   PreparedStatement statement=(PreparedStatement) con.prepareStatement("insert into cart(item_id,item_name,quantity,user_id,item_price,imageUrl) values(?,?,?,?,?,?)");
 			   statement.setInt(1,cartItem.getItemid());
 			   statement.setString(2,cartItem.getItemName());
 			   statement.setInt(3, cartItem.getItemQty());

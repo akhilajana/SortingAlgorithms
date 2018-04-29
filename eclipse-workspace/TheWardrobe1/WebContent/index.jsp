@@ -55,9 +55,10 @@
 </div>
   
 <div class="items-container text-center">
+  <form id="getProduct" action="${pageContext.request.contextPath}/ProductDetailServlet" method="post">
+
 <h3>New In</h3><br>
   <div class="row">
-  <form id="getProduct" action="${pageContext.request.contextPath}/ProductDetailServlet" method="post">
 
 		<c:forEach items="${Items}" var="current">
 		

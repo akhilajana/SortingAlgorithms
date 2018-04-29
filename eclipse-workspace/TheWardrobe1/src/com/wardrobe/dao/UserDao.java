@@ -4,11 +4,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+
+import com.wardrobe.model.Products;
+import com.wardrobe.model.User;
 
 public class UserDao {
 	
 	private static ResultSet resultSet = null;
 	  private static PreparedStatement pstatement=null;
+	  public static String USER_TYPE="";
 	   public static Connection getConnection(){  
 	        Connection con=null;  
 	        try{  
@@ -18,25 +23,34 @@ public class UserDao {
 	            catch(Exception e){System.out.println(e);}  
 		        return con;
 	   }
-	   public int user_update(int id,String connection)
-	   {
-		   int status=0;
-		   try{
-			   
-		   Connection con=getConnection();
-           PreparedStatement pstatement=(PreparedStatement) con.prepareStatement("insert into user values(?,?,?)");
-      	   pstatement.setInt(1,id);//retrieved from session
-      	   pstatement.setString(2,connection);//connection
-      	  // pstatement.setBoolean(3,newsletter);
-      	   
-      	   status=pstatement.executeUpdate();
-       
-         //con.close(); 
-		   }
-		   catch(Exception ex){
-			   ex.printStackTrace();
-		   }
-		   return status;
-	   }
+	   public User getUserDetails(String userName) {
+			// TODO Auto-generated method stub
+			try{
+				   Connection con=getConnection();
+	        	   User user=new User();
+
+				   PreparedStatement statement=(PreparedStatement) con.prepareStatement("SELECT * FROM user where UserName=?;");
+				   statement.setString(1, userName);
+		           resultSet=statement.executeQuery();
+		           while(resultSet.next())
+		           {
+		        	   user.setId(resultSet.getInt("id"));
+		        	   user.setName(resultSet.getString("name"));
+	    				user.setPhone_no(resultSet.getString("Phone_no"));
+	    				user.setUsername(resultSet.getString("username"));
+	    				user.setPassword(resultSet.getString("password"));
+	    				user.setType(resultSet.getString("type"));
+	    				user.setEmail(resultSet.getString("Email"));
+	    				user.setStatusMsg("success");
+		    		   
+		           }
+		           return user;
+			   }
+			   catch(Exception e)
+			   {
+				   e.printStackTrace();
+			   }
+			   return null;
+		}
 
 }

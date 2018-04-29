@@ -39,19 +39,14 @@ public class CartItemsServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		PrintWriter out=response.getWriter();
-//		HttpSession session=request.getSession(); 
-//		User user=(User) session.getAttribute("user");
-//		CartDao dao=new CartDao();
-//		cartItems=dao.getCartItems(user.getId());
-//		String cartList="";
-//		for(int i=0;i<cartItems.size();i++)
-//		{
-//			CartItem itemC=cartItems.get(i);
-//			String cItemContainer="<div class='col-md-12 col-xs-12 cartItem'><div class='cartImg col-md-4 col-xs-12'><img src='"+itemC.getItem_ImgUrl()+"'></div><div class='cartItemData col-md-8 col-xs-12'><div class='icName'>"+ itemC.getItemName()+"</div><div class='icPrice'>"+  itemC.getItemPrice()+"</div></div><div class='clear_fix'></div></div><div class='clear_fix'></div>";
-//			cartList=cartList+cItemContainer;
-//		}
-//		out.print(cartList);
+		
+		HttpSession session=request.getSession(); 
+		User user=(User) session.getAttribute("user");
+		CartDao dao=new CartDao();
+		cartItems=dao.getCartItems(user.getId());
+		request.setAttribute("CartItems", cartItems);
+		request.getRequestDispatcher("cart.jsp").forward(request, response);
+		
 	}
 
 	/**
@@ -63,23 +58,22 @@ public class CartItemsServlet extends HttpServlet {
 		HttpSession session=request.getSession(); 
 		User user=(User) session.getAttribute("user");
 		
-		
-		System.out.println("id"+request.getParameter("productId"));
-	
-		System.out.println("price"+request.getParameter("iPrice"));
-		
+	//	System.out.println("removedId"+request.getParameter("itemid"));
+			
 	//Get product details from database	
 		ProductDetailDao dao=new ProductDetailDao();
 		int productId=Integer.parseInt(request.getParameter("productId"));
+		System.out.println("id"+request.getParameter("productId"));
+
 		Products item=dao.getProductById(productId);
 		request.setAttribute("DetailItem", item);
-		request.getRequestDispatcher("cart.jsp").forward(request, response);
+		//request.getRequestDispatcher("cart.jsp").forward(request, response);
 		
 	//Update cart in database	
 			CartItem cartItem=new CartItem();
-			cartItem.setItemid(Integer.parseInt(request.getParameter("productId")));
+			cartItem.setItemid(productId);
 			cartItem.setItemName(item.getName());
-			cartItem.setItemQty(1);
+			cartItem.setItemQty(1); //get quantity from selected item
 			cartItem.setUserId(user.getId());
 			cartItem.setItemPrice(item.getPrice());
 			cartItem.setItem_ImgUrl(item.getImageUrl());
@@ -87,15 +81,17 @@ public class CartItemsServlet extends HttpServlet {
 			CartDao cartdao = new CartDao();
 			int status=cartdao.insert_cart(cartItem);
 			
+//			if(request.getParameter("itemid") != null)
+//			{
+//				//remove item from cart
+//				cartdao.delete_cart(Integer.parseInt(request.getParameter("itemid")));
+//			}
+			
 			cartItems=cartdao.getCartItems(user.getId());
 			
-			String cartList="";
-			for(int i=0;i<cartItems.size();i++){
-				CartItem itemC=cartItems.get(i);
-				String cItemContainer="<div class='col-md-12 col-xs-12 cartItem'><div class='cartImg col-md-4 col-xs-12'><img src='"+itemC.getItem_ImgUrl()+"'></div><div class='cartItemData col-md-8 col-xs-12'><div class='icName'>"+ itemC.getItemName()+"</div><div class='icPrice'>"+  itemC.getItemPrice()+"</div></div><div class='clear_fix'></div></div><div class='clear_fix'></div>";
-				cartList=cartList+cItemContainer;
-			}
-			out.print(cartList);
+			request.setAttribute("CartItems", cartItems);
+			request.getRequestDispatcher("cart.jsp").forward(request, response);
+
 		 }
 	
 

@@ -51,6 +51,12 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session=request.getSession();
 		String username=request.getParameter("uname");
 		 String password=request.getParameter("pass");
+		 
+		 //Decrypt password
+		 PasswordUtil pwdUtil = new PasswordUtil();
+	     String decryptedPassword=pwdUtil.decrypt(password);
+	     System.out.println("Depwd"+decryptedPassword);
+		 
 		 AuthenticationDao auDao=new AuthenticationDao();
 		 User user=auDao.login_Check(username,password);
 		 if(user.getStatusMsg().equalsIgnoreCase("success")){

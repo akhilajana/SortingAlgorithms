@@ -48,10 +48,12 @@ public class SignupServlet extends HttpServlet {
 	     String phoneNo=request.getParameter("phoneNo");
 	     String password=request.getParameter("pwd");
 	     
-	     System.out.println(fName);
+	     PasswordUtil pwdUtil = new PasswordUtil();
+	     String encryptedPassword=pwdUtil.encrypt(password);
+	     System.out.println("pwd"+encryptedPassword);
 	     
 	     HttpSession session=request.getSession();
-	     User user=new User(fName,userName,password,"customer",email,phoneNo);
+	     User user=new User(fName,userName,encryptedPassword,"customer",email,phoneNo);
 	     AuthenticationDao dao=new AuthenticationDao();
 	     status=dao.signup_check(user);
 	     

@@ -15,6 +15,13 @@ body {
     font-family: Arial;
 }
 
+ div.col-sm-3 div {
+      height: 200px;
+      font-size: 25px;
+      text-align:center;
+      
+  }
+
 
 /*   centered
   {

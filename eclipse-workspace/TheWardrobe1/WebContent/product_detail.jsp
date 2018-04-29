@@ -73,11 +73,9 @@
 			<br>
 			<form action="${pageContext.request.contextPath}/CartItemsServlet"
 				id="getCart" method="post">
-				<input type="hidden" value="${detailItem.productId}" id="productId" />
-				<button type="submit" class="btn addtoCart"
-					name="${detailItem.productId}">
-					<span class="glyphicon glyphicon-shopping-cart"></span> Add to cart
-				</button>
+				<input type="hidden" value="${detailItem.productId}"
+					class="productId" name="productId"> <input type="submit"
+					class="btn btn-success" value="Add to Cart">
 			</form>
 		</div>
 	</div>

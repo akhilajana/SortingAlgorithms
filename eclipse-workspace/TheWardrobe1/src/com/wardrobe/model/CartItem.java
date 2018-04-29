@@ -6,6 +6,21 @@ public class CartItem
  String itemName, item_ImgUrl;
  double itemPrice;
  
+ 
+	public CartItem() {
+	super();
+}
+	public CartItem(int itemid, int userId, int cartItemId, int itemQty, String itemName, String item_ImgUrl,
+		double itemPrice) {
+	super();
+	this.itemid = itemid;
+	this.userId = userId;
+	this.cartItemId = cartItemId;
+	this.itemQty = itemQty;
+	this.itemName = itemName;
+	this.item_ImgUrl = item_ImgUrl;
+	this.itemPrice = itemPrice;
+}
 	public int getItemid() {
 		return itemid;
 	}
@@ -48,5 +63,13 @@ public class CartItem
 	public void setItemQty(int itemQty) {
 		this.itemQty = itemQty;
 	}
+	@Override
+	public String toString() {
+		return "CartItem [itemid=" + itemid + ", userId=" + userId + ", cartItemId=" + cartItemId + ", itemQty="
+				+ itemQty + ", itemName=" + itemName + ", item_ImgUrl=" + item_ImgUrl + ", itemPrice=" + itemPrice
+				+ "]";
+	}
+	
+	
 	 
 }

@@ -15,5 +15,6 @@
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry exported="true" kind="lib" path="/Users/akhilajana/Documents/NBAD Project/servlet-api.jar"/>
 	<classpathentry exported="true" kind="lib" path="/Users/akhilajana/Documents/NBAD Project/jstl-1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/akhilajana/Documents/NBAD Project/javax.mail.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -10,6 +10,7 @@
 	
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel = "stylesheet" href="css/products_style.css">
+	
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/listeners.js"></script>
@@ -26,7 +27,7 @@
 </div>
 	
 	
-<div id="container" style="width:100%;">                                   
+<div id=" container" style="width:100%;">                                   
   	<%-- <div class="col-sm-2 well" style="float:right; width:20%;"> 
 	
 		<h4>Filter By</h4>
@@ -77,7 +78,7 @@
 	
 	 <div class="vl"></div> --%> 
 	
-  	<div class=" col-md-8 " style="float:right; width:100%;"> 
+  	<div class=" row col-md-8 " style="float:right; width:100%;"> 
 		
 		<h2 style="color:#FF6347">${Category}</h2><br>
 		 <form id="getProduct" action="${pageContext.request.contextPath}/ProductDetailServlet" method="post">
@@ -98,8 +99,11 @@
 				
 			 </form>
 	 		<br>
-		</div>                   
+		</div> 
+			<div class="row"><jsp:include page="footer.jsp"/></div>
+		                  
 	</div>
+
 
 </body>
 </html>

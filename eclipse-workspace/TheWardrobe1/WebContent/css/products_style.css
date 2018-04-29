@@ -1,3 +1,30 @@
+/* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      
+      margin-bottom: 20px;
+      border-radius: 0;
+    }
+  
+    
+    .item_img { height :330px!important}
+    
+  .carousel-inner img {
+	  width: 1200px;
+	  height: 300px;
+      margin: auto;
+      min-height:200px;
+  }
+  
+.page-footer
+{
+
+  background-color: #333333;
+  text-align: center;
+   position:absolute;
+   bottom:-800px;
+   width:100%;
+}
+
 /*verticalline*/
 .vl {
 	border-left: 2px #FF6347;
@@ -6,6 +33,8 @@
 	left: 79%;
 	margin: auto
 }
+
+
 
 .item_img {
 	height: 330px !important
@@ -21,6 +50,8 @@ body {
 	text-align: center;
 	margin: 50px;
 }
+
+
 
 /*Button Styling*/
 .btn {
@@ -67,9 +98,19 @@ body {
     border-radius: 2px;
     margin-bottom: 20px;
     padding-bottom: 10px;
+    letter-spacing: .025em;
+	font-size: 20px;
 }
 .bordered .content.message {
     padding: 20px;
+}
+/* .cartItem{
+	border-bottom: #000 1px solid;
+    padding: 10px;
+} */
+.cartItemData
+{
+	
 }
 
 /*cart summary*/
