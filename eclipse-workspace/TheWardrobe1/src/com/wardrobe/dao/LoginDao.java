@@ -12,8 +12,10 @@ public class LoginDao {
 		boolean status=false;  
 		try{  
 		Class.forName("com.mysql.jdbc.Driver");  
-		Connection con=DriverManager.getConnection(  
-		"jdbc:mysql://localhost:3306/wardrobeModel","root","root");  
+//		Connection con=DriverManager.getConnection(  
+//		"jdbc:mysql://localhost:3306/wardrobeModel","root","root");  
+        Connection con=DriverManager.getConnection("jdbc:mysql://awswardrobemodel.cjgqsqxh9apc.us-east-1.rds.amazonaws.com:3306/awsDB","awsroot1","awsroot1");
+
 		      
 		PreparedStatement ps=con.prepareStatement(  
 		"select * from user where email=? and password=?");  

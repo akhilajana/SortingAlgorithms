@@ -18,7 +18,9 @@ public class UserDao {
 	        Connection con=null;  
 	        try{  
 	            Class.forName("com.mysql.jdbc.Driver");  
-	            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/wardrobeModel","root","root");
+//	            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/wardrobeModel","root","root");
+	            con=DriverManager.getConnection("jdbc:mysql://awswardrobemodel.cjgqsqxh9apc.us-east-1.rds.amazonaws.com:3306/awsDB","awsroot1","awsroot1");
+
 	        }
 	            catch(Exception e){System.out.println(e);}  
 		        return con;
