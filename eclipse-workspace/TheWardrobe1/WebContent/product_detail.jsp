@@ -61,18 +61,18 @@
 				<div class="itemDetailLabel">Cost</div>
 				<p name="iPrice">${detailItem.price}</p>
 			</div>
-
+<form action="${pageContext.request.contextPath}/CartItemsServlet"
+				id="getCart" method="post">
 			<div class="detailRow ">
 				<div class="itemDetailLabel">Quantity</div>
-				<select id="qty">
+				<select  name= "itemQty">
 					<c:forEach var="i" begin="1" end="${detailItem.qty}">
 						<option value="${i}">${i}</option>
 					</c:forEach>
 				</select>
 			</div>
 			<br>
-			<form action="${pageContext.request.contextPath}/CartItemsServlet"
-				id="getCart" method="post">
+			
 				<input type="hidden" value="${detailItem.productId}"
 					class="productId" name="productId"> <input type="submit"
 					class="btn btn-success" value="Add to Cart">

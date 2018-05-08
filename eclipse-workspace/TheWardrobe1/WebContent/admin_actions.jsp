@@ -37,6 +37,8 @@
 			<div class="row well" onclick="openTab('b1');">Add New Items</div>
 			<div class="row well" onclick="openTab('b2');">Delete Existing
 				Items</div>
+				<div class="row well" onclick="openTab('b3');">Update Existing
+				Items</div>
 		</div>
 		<div class="col-sm-7 col-xs-offset-1">
 			<div id="b1" class="containerTab" style="display: none;">
@@ -158,6 +160,58 @@
 								<input type="submit" name="delete_item"
 									class="btn btn-danger"
 									value="Delete
+									Item">
+
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div id="b3" class="containerTab" style="display: none;">
+				<span onclick="this.parentElement.style.display='none'"
+					class="closebtn">&times;</span>
+				<div class="col-md-7 col-sm-offset-1 well">
+					<!-- Your first column here -->
+					<h3>Item to be updated</h3>
+					<form class=" form-horizontal login-form "
+						action="${pageContext.request.contextPath}/ProductActionsServlet"
+						method="post">
+
+						<div class="form-group">
+							<label class="control-label col-sm-4" for="prdId">Product
+								Id:</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" id="prdId"
+									placeholder="Enter product Id" name="prdId">
+							</div>
+							<label class="control-label col-sm-4" for="prdSize">Product
+								Size:</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" id="prdSize"
+									placeholder="Enter product size" name="prdSize">
+							</div>
+							<label class="control-label col-sm-4" for="prdQty">Product
+								Quantity:</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" id="prdQty"
+									placeholder="Enter product Quantity" name="prdQty">
+							</div>
+							<label class="control-label col-sm-4" for="prdPrice">Product
+								Price:</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" id="prdPrice"
+									placeholder="Enter product Price" name="prdPrice">
+							</div>
+						</div>
+						
+						<br>
+
+
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<input type="submit" name="update_item"
+									class="btn btn-success"
+									value="Update
 									Item">
 
 							</div>

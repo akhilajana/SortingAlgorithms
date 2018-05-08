@@ -107,6 +107,28 @@ public class ProductActionsServlet extends HttpServlet {
 			} else {
 				//Item has not been deleted
 			}
+		} if (request.getParameter("update_item")!=null) {
+			// Update product in database
+			
+			int status = 0;
+			int itemId = Integer.parseInt(request.getParameter("prdId"));
+			Double itemPrice = Double.parseDouble(request.getParameter("prdPrice"));
+			int itemQty= Integer.parseInt(request.getParameter("prdQty"));
+			String itemSize= request.getParameter("prdSize");
+					
+			System.out.println(itemId);
+
+			HttpSession session = request.getSession();
+			ProductActionsDao dao = new ProductActionsDao();
+			status = dao.update_item(itemId, itemPrice, itemQty,itemSize);
+
+
+			if (status > 0) {
+				//Item deleted from database
+				request.getRequestDispatcher("admin_actions.jsp").forward(request, response);
+			} else {
+				//Item has not been deleted
+			}
 		} 
 
 	}

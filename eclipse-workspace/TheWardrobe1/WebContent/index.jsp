@@ -57,12 +57,12 @@
 <div class="items-container text-center">
   <form id="getProduct" action="${pageContext.request.contextPath}/ProductDetailServlet" method="post">
 
-<h3>New In</h3><br>
+<h3  style="color: #FF6347;">New In</h3><br>
   <div class="row">
 
 		<c:forEach items="${Items}" var="current">
 		
-			<div class=" col-sm-4">
+			<div class=" well col-sm-4">
 				<img src="${current.imageUrl}" class=" item_img img-responsive" name = "${current.productId}"/>
 			    <p>${current.name}</p>
 				<p>${current.price}</p>			

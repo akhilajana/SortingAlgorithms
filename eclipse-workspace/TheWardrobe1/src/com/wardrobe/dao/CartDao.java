@@ -40,6 +40,24 @@ public class CartDao {
 		   }
 		   return 0;
 	   }
+	   
+	   public int update_cart(int itemId)
+	   {
+		   int status=0;
+		   try{
+			   Connection con=getConnection();
+			   PreparedStatement statement=(PreparedStatement) con.prepareStatement("UPDATE cart SET quantity = quantity+1 where item_id=?");
+			   statement.setInt(1,itemId);
+			   status=statement.executeUpdate();
+			   return status;
+		   }
+		   catch(Exception e)
+		   {
+			  e.printStackTrace(); 
+		   }
+		   return 0;
+	   }
+	   
 	   public int insert_cart(CartItem cartItem)
 	   {
 		   int status=0;
@@ -77,6 +95,7 @@ public class CartDao {
 	        	   item.setItem_ImgUrl(resultSet.getString("imageUrl"));
 	        	   item.setItemName(resultSet.getString("item_name"));
 	        	   item.setItemid(resultSet.getInt("item_id"));
+	        	   item.setItemQty(resultSet.getInt("quantity"));
 	        	   item.setItemPrice(resultSet.getDouble("item_price"));
 	        	   item.setCartItemId(resultSet.getInt("cart_id"));
 	    		   items.add(item);

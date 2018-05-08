@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>My Cart| The Wardrobe</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/products_style.css">
@@ -22,7 +22,7 @@
 	<br>
 	<div>
 		<div class="container text-center">
-			<h1>empty shit</h1>
+			<h1>-------</h1>
 			<p></p>
 		</div>
 	</div>
@@ -31,8 +31,8 @@
 
 		<div class="col-sm-offset-1">
 			<p>
-			<h2 style="color: #FF6347;">Your Cart (0)</h2>
-			</p>
+			<h2 style="color: #FF6347;">Your Cart (${fn:length(CartItems)})</h2>
+			
 		</div>
 
 		<!-- /* Content Items */ -->
